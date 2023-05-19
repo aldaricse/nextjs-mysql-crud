@@ -25,7 +25,7 @@ export const TaskList = () => {
   const getTasks = async () => {
     try {
       const response = await axios.get('/api/tasks')
-      // console.log(response.data);
+      console.log(response.data);
       setTasks(response.data)
       setLoading(false);
     } catch (error) {
@@ -62,11 +62,11 @@ export const TaskList = () => {
     <>
       <div className={classNames({
         'grid gap-4': true,
-        'grid-cols-4': tasks && tasks.length > 1,
+        'grid-cols-4': tasks && tasks.length > 0,
         'grid-cols-1': !tasks || tasks.length === 0,
       })}>
         {
-          tasks && tasks.length > 1 ? tasks.map((task) => (
+          tasks && tasks.length > 0 ? tasks.map((task) => (
             <TaskCard
               key={task.id}
               task={task}
