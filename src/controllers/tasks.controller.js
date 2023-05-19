@@ -5,6 +5,7 @@ export const getTasks = async () => {
   try {
     const [result] = await pool.query('SELECT * FROM tasks;');
     // console.log(result);
+    console.log(process.env.DATABASE_HOST);
     return NextResponse.json(result, { status: 201 });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
