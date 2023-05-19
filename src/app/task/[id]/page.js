@@ -14,9 +14,11 @@ const getTask = async (id) => {
 export const generateMetadata = async ({ params }) => {
   try {
     const taskDetail = await getTask(params.id)
-    return {
-      title: `Task | ${taskDetail.title}`,
-      description: taskDetail.description
+    if (taskDetail && taskDetail.title) {
+      return {
+        title: `Task | ${taskDetail.title}`,
+        description: taskDetail.description
+      }
     }
   } catch (error) {
     console.log(error);
