@@ -1,7 +1,8 @@
 import './globals.css'
+import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Layout } from '../components/Layout'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from '../components/Toaster';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
@@ -12,6 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        {/* <meta charset="UTF-8" />
+        <meta name="author" content="Aldair Ormenño" /> */}
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      </Head>
       <body>
         <Header />
         <Layout>

@@ -6,4 +6,5 @@ export const pool = createPool({
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_DB,
   port: process.env.DATABASE_PORT,
+  ssl: true
 })

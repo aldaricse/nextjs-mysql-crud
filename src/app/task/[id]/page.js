@@ -3,6 +3,7 @@ import TaskForm from '@/components/TaskForm';
 
 const getTask = async (id) => {
   try {
+    // console.log(window.location.host);
     const response = await axios.get(`${process.env.URL_API}/tasks/${id}`)
     return response.data
   } catch (error) {

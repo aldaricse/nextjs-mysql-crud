@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios'
 import ModalConfirm from '../components/ModalConfirm'
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 
 const TaskForm = ({ taskDetail }) => {
@@ -105,7 +105,6 @@ const TaskForm = ({ taskDetail }) => {
         onSuccess={onSubmit}
         onClose={() => setOpen(false)}
       />
-      <ToastContainer />
     </Card>
   )
 }

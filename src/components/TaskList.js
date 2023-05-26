@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { TaskCard } from '../components/TaskCard';
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import ModalConfirm from '../components/ModalConfirm'
 import { Spinner } from 'flowbite-react';
 import classNames from 'classnames';
@@ -16,7 +16,6 @@ export const TaskList = () => {
   const [loadingModal, setLoadingModal] = useState(false)
   const [taskSelected, setTaskSelected] = useState({})
   const router = useRouter();
-  const pathname = usePathname();
 
   useEffect(() => {
     getTasks()
@@ -25,7 +24,7 @@ export const TaskList = () => {
   const getTasks = async () => {
     try {
       const response = await axios.get('/api/tasks')
-      console.log(response.data);
+      // console.log(response.data);
       setTasks(response.data)
       setLoading(false);
     } catch (error) {
@@ -93,7 +92,6 @@ export const TaskList = () => {
         onSuccess={onDelete}
         onClose={() => setOpen(false)}
       />
-      <ToastContainer />
     </>
   )
 }
